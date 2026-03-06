@@ -5,7 +5,7 @@
         public double Mut { get; set; }
         public double Sum { get; set; }
         public double Result { get; set; }
-        public string[] NumberValid { get; set; } = new string[2] { "0", "1" };
+        public HashSet<char> NumberValid { get; set; } = new HashSet<char> { '0', '1' };
 
         public string ConvertBinary(string value)
         {
@@ -37,11 +37,6 @@
         }
 
         public string ConvertOctal(string value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Validator(string value)
         {
             throw new NotImplementedException();
         }
