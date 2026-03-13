@@ -2,7 +2,7 @@
 
 namespace Conversor.Engine
 {
-    internal class BaseSelect
+    internal static class BaseSelect
     {
         public static INumberBases TypeNumeric(int option)
         {
@@ -15,13 +15,13 @@ namespace Conversor.Engine
                     return new BaseDecimal();
                     break;
                 case 16:
-                    return new Hexadecimal(); // Implementar interface na classe
+                    return new Hexadecimal(); 
                     break;
                 case 8:
-                    return new Octal(); // Implementar interface na classe
+                    return new Octal(); 
                     break;
                 case 5:
-                    return new Fifth(); // Implementar interface na classe
+                    return new Fifth(); 
                     break;
                 default:
                     Console.WriteLine("Opção Inválida");

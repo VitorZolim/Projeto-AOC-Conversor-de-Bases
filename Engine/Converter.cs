@@ -17,17 +17,33 @@ namespace Conversor.Engine
             _numberBase = numberBase;
         }
 
-        public double Calculate() //verificar retorno dos valores
+        public string Calculate() //Operação final do Projeto retorno do valor convertido
         {
             if(BaseConverted == 2)
             {
-                // return _numberBase.ConvertBinary(NumberValue); //verificar formas de retorno de valor
+                return _numberBase.ConvertBinary(NumberValue);
             }
             else if(BaseConverted == 10)
             {
-                 // return _numberBase.ConvertDecimal(NumberValue); // Mesmo problema do de cima e faltando implementar mais as outras bases
+                 return _numberBase.ConvertDecimal(NumberValue); 
             }
-                return 0;
+            else if(BaseConverted == 16)
+            {
+                return _numberBase.ConvertHexadecimal(NumberValue);
+            }
+            else if(BaseConverted == 8)
+            {
+                return _numberBase.ConvertOctal(NumberValue);
+            }
+            else if(BaseConverted == 5)
+            {
+                return _numberBase.ConvertFifth(NumberValue);
+            }
+            else
+            {
+                Console.WriteLine("Erro de Base Calculate");
+                return null;
+            }
         }
     }
 }

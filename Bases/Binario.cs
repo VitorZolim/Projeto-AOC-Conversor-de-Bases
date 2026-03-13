@@ -2,7 +2,7 @@
 {
     internal class Binario : INumberBases
     {
-        public double Mut { get; set; }
+        public double Mut { get; set; } //Retirar atributos da class, manter apenas os metodos
         public double Sum { get; set; }
         public double Result { get; set; }
         public HashSet<char> NumberValid { get; set; } = new HashSet<char> { '0', '1' };
