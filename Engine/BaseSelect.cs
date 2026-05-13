@@ -4,7 +4,7 @@ namespace Conversor.Engine
 {
     internal static class BaseSelect
     {
-        public static INumberBases TypeNumeric(int option)
+        public static INumberBases TypeNumeric(int option) //Decide o tipo da base principal do número retornando a classe correspondente
         {
             switch (option)
             {
@@ -24,7 +24,7 @@ namespace Conversor.Engine
                     return new Fifth(); 
                     break;
                 default:
-                    Console.WriteLine("Opção Inválida");
+                    Console.WriteLine("Opção Inválida"); //Verificar se realmente precisa dessa mensagem
                     return null;
                     break;
             }
