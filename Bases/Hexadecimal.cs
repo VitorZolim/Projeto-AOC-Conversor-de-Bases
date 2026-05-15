@@ -1,4 +1,6 @@
 ﻿
+using Conversor.Engine;
+
 namespace Conversor.Bases
 {
     internal class Hexadecimal : INumberBases
@@ -12,7 +14,24 @@ namespace Conversor.Bases
 
         public string ConvertDecimal(string value)
         {
-            throw new NotImplementedException();
+            ulong Sum = 0, Result = 0;
+            int digit;
+            char[] chars = value.Reverse().ToArray();
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (chars[i] >= 'A' && chars[i] <= 'F')
+                {
+                    digit = BaseSelect.ConvertHex(chars[i]);
+                }
+                else
+                {
+                    digit = BaseSelect.ConvertDec(chars[i]);
+                }
+                Sum += (ulong)(Math.Pow(2, i) * digit);
+                Result = Sum;
+            }
+            return Result.ToString();
         }
 
         public string ConvertFifth(string value)

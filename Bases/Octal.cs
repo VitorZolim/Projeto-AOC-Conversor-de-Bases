@@ -1,4 +1,6 @@
 ﻿
+using Conversor.Engine;
+
 namespace Conversor.Bases
 {
     internal class Octal : INumberBases
@@ -12,7 +14,17 @@ namespace Conversor.Bases
 
         public string ConvertDecimal(string value)
         {
-            throw new NotImplementedException();
+            ulong Sum = 0, Result = 0;
+            int digit;
+            char[] chars = value.Reverse().ToArray();
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                digit = BaseSelect.ConvertDec(chars[i]);
+                Sum += (ulong)(Math.Pow(8, i) * digit);
+                Result = Sum;
+            }
+            return Result.ToString();
         }
 
         public string ConvertFifth(string value)

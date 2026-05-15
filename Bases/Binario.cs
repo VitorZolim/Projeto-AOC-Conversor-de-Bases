@@ -1,4 +1,6 @@
-﻿namespace Conversor.Bases
+﻿using Conversor.Engine;
+
+namespace Conversor.Bases
 {
     internal class Binario : INumberBases
     {
@@ -9,18 +11,19 @@
             return value;
         }
 
-        public string ConvertDecimal(string value) //Conversor de Binario para decimal
+        public string ConvertDecimal(string value)
         {
-            string[] N = value.Select(c => c.ToString()).ToArray(); // Separar caracter do value
-            Array.Reverse(N); //Inverte possição dos numeros para ficar corresponde a sua elevação
+            ulong Sum = 0, Result = 0;
+            int digit;
+            char[] chars = value.Reverse().ToArray();
 
-            for (int i = 0; i < N.Length; i++)
+            for (int i = 0; i < value.Length; i++)
             {
-                Mut = Math.Pow(2, i) * int.Parse(N[i]);
-                Sum += Mut;
+                digit = BaseSelect.ConvertDec(chars[i]);
+                Sum += (ulong)(Math.Pow(2, i) * digit);
                 Result = Sum;
             }
-            return Result.ToString(); // Lembrar de verificar questãqo de retorno de valores e aplicações
+            return Result.ToString();
         }
 
         public string ConvertFifth(string value)
