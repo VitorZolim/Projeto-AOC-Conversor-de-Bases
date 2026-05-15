@@ -17,7 +17,7 @@ namespace Conversor.Bases
 
         public string ConvertFifth(string value)
         {
-            throw new NotImplementedException();
+            return value;
         }
 
         public string ConvertHexadecimal(string value)

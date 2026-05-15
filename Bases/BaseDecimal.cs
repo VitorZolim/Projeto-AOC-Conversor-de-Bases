@@ -12,7 +12,7 @@ namespace Conversor.Bases
 
         public string ConvertDecimal(string value)
         {
-            throw new NotImplementedException();
+            return value;
         }
 
         public string ConvertFifth(string value)

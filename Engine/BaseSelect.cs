@@ -24,10 +24,24 @@ namespace Conversor.Engine
                     return new Fifth(); 
                     break;
                 default:
-                    Console.WriteLine("Opção Inválida"); //Verificar se realmente precisa dessa mensagem
                     return null;
                     break;
             }
+        }
+        public static int ConvertHex(char L)
+        {
+            int HexNum = (int)L - 55;
+            return HexNum;
+        }
+        public static char ConvertHex(int N)
+        {
+            int HexNum = N + 55;
+            return (char)HexNum;
+        }
+        public static int ConvertDec(char N)
+        {
+            int DecNum = (int)N - 48;
+            return DecNum;
         }
     }
 }

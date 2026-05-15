@@ -27,7 +27,7 @@ namespace Conversor.Bases
 
         public string ConvertOctal(string value)
         {
-            throw new NotImplementedException();
+            return value;
         }
     }
 }

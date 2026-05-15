@@ -22,7 +22,7 @@ namespace Conversor.Bases
 
         public string ConvertHexadecimal(string value)
         {
-            throw new NotImplementedException();
+            return value;
         }
 
         public string ConvertOctal(string value)

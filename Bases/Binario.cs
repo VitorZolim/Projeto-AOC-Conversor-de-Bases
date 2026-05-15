@@ -2,14 +2,11 @@
 {
     internal class Binario : INumberBases
     {
-        public double Mut { get; set; } //Retirar atributos da class, manter apenas os metodos
-        public double Sum { get; set; }
-        public double Result { get; set; }
         public HashSet<char> NumberValid { get; set; } = new HashSet<char> { '0', '1' };
 
         public string ConvertBinary(string value)
         {
-            throw new NotImplementedException();
+            return value;
         }
 
         public string ConvertDecimal(string value) //Conversor de Binario para decimal
