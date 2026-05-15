@@ -9,7 +9,10 @@ namespace Conversor.Bases
 
         public string ConvertBinary(string value)
         {
-            throw new NotImplementedException();
+            value = ConvertDecimal(value);
+            BaseDecimal Base10 = new BaseDecimal();
+            value = Base10.ConvertBinary(value);
+            return value;
         }
 
         public string ConvertDecimal(string value)
@@ -34,12 +37,18 @@ namespace Conversor.Bases
 
         public string ConvertHexadecimal(string value)
         {
-            throw new NotImplementedException();
+            value = ConvertDecimal(value);
+            BaseDecimal Base10 = new BaseDecimal();
+            value = Base10.ConvertHexadecimal(value);
+            return value;
         }
 
         public string ConvertOctal(string value)
         {
-            throw new NotImplementedException();
+            value = ConvertDecimal(value);
+            BaseDecimal Base10 = new BaseDecimal();
+            value = Base10.ConvertOctal(value);
+            return value;
         }
     }
 }
