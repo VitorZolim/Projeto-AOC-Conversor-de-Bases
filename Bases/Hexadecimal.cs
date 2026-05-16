@@ -31,7 +31,7 @@ namespace Conversor.Bases
                 {
                     digit = BaseSelect.ConvertDec(chars[i]);
                 }
-                Sum += (ulong)(Math.Pow(2, i) * digit);
+                Sum += (ulong)(Math.Pow(16, i) * digit);
                 Result = Sum;
             }
             return Result.ToString();

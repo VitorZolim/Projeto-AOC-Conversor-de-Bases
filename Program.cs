@@ -7,26 +7,38 @@ public class Program
 {
     public static void Main()
     {
-        Converter Operation = new Converter(); //Logica para inicio e conversão de bases
-        int[] Bases = new int[5] { 2, 10, 16, 8, 5 }; //Bases possiveis para conversão
-        //Valores:
+        //Variaveis de Entrada
         INumberBases MainBase; // Primeira Base, corresponde ao valor de entrada
-        int CBase; // Segunda Base, corresponde a base a ser convertida
-        string Value; //Valor de entrada
+        string Value;
+        int CBase, n; // Segunda Base, corresponde a base a ser convertida
+
+        int[] Bases = new int[5] { 2, 10, 16, 8, 5 }; //Validação
+        Converter Operation = new Converter(); //Logica para inicio e conversão de bases
 
         while (true)
         {
-            //if(Value.ToUpper() != "x") { break; } Alguma lógica para finalizar o programa
+            Console.WriteLine("--------Bases--------" +
+                            "\n[2] [10] [16] [5] [8]" +
+                            "\n[x] Finalizar\n");
 
-            //Entradas do usuario
-            int v = int.Parse(Console.ReadLine());
-            MainBase = BaseSelect.TypeNumeric(v);
-            Value = Console.ReadLine();
-            CBase = int.Parse(Console.ReadLine());
-            
+            Console.Write("Base do Número: ");
+            string option = Console.ReadLine();
+            if (option.ToUpper() == "X") { break; } // Fim Programa
+
+            n = BaseSelect.SelectionInt(option); //Base do Número
+            MainBase = BaseSelect.TypeNumeric(n);
+
+            Console.Write("Número: ");
+            Value = Console.ReadLine(); //Número para conversão
+
+            Console.Write("Base de Conversão: ");
+            option = Console.ReadLine(); //Base para conversão
+            CBase = BaseSelect.SelectionInt(option);
+
             if (MainBase != null && Bases.Contains(CBase) && MainBase.Validator(Value)) //Logica de validação geral - Verifica se os 3 valores são validos
             {
                 Operation = new Converter(Value, CBase, MainBase); // Resultado instancia da classe permitida para calcular
+                Console.WriteLine("Conversão: " + Operation.Calculate() + "\n");
             }
             else
             {

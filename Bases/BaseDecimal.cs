@@ -19,8 +19,8 @@ namespace Conversor.Bases
 
             char[] invert = sr.ToString().ToCharArray();
             Array.Reverse(invert);
-
-            return invert.ToString();
+            
+            return new string(invert);
         }
 
         public string ConvertDecimal(string value)
@@ -40,8 +40,8 @@ namespace Conversor.Bases
 
             char[] invert = sr.ToString().ToCharArray();
             Array.Reverse(invert);
-
-            return invert.ToString();
+            
+            return new string(invert);
         }
 
         public string ConvertHexadecimal(string value)
@@ -64,8 +64,8 @@ namespace Conversor.Bases
 
             char[] invert = sr.ToString().ToCharArray();
             Array.Reverse(invert);
-
-            return invert.ToString();
+            
+            return new string(invert);
         }
 
         public string ConvertOctal(string value)
@@ -80,8 +80,8 @@ namespace Conversor.Bases
 
             char[] invert = sr.ToString().ToCharArray();
             Array.Reverse(invert);
-
-            return invert.ToString();
+            
+            return new string(invert);
         }
     }
 }

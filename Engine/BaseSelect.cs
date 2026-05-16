@@ -43,5 +43,21 @@ namespace Conversor.Engine
             int DecNum = (int)N - 48;
             return DecNum;
         }
+
+        public static int SelectionInt(string entrada)
+        {
+            int B;
+            do
+            {
+                
+                if (!int.TryParse(entrada, out B))
+                {
+                    Console.WriteLine("Entrada inválida. Por favor, digite um número inteiro.");
+                    entrada = Console.ReadLine();
+                }
+
+            } while (!int.TryParse(entrada, out B));
+            return B;
+        }
     }
 }
