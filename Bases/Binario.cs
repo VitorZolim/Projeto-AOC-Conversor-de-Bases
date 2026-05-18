@@ -13,15 +13,20 @@ namespace Conversor.Bases
 
         public string ConvertDecimal(string value)
         {
-            ulong Sum = 0, Result = 0;
+            ulong Sum = 0, Pow = 1, Result = 0;
             int digit;
             char[] chars = value.Reverse().ToArray();
 
             for (int i = 0; i < value.Length; i++)
             {
                 digit = BaseSelect.ConvertDec(chars[i]);
-                Sum += (ulong)(Math.Pow(2, i) * digit);
+                for (int j = 0; j < i; j++)
+                {
+                    Pow *= 2;
+                }
+                Sum += Pow * (ulong)digit;
                 Result = Sum;
+                Pow = 1;
             }
             return Result.ToString();
         }

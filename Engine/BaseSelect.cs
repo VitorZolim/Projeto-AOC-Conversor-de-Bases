@@ -49,15 +49,21 @@ namespace Conversor.Engine
             int B;
             do
             {
-                
+
                 if (!int.TryParse(entrada, out B))
                 {
+                    CloseProgram(entrada);
                     Console.WriteLine("Entrada inválida. Por favor, digite um número inteiro.");
                     entrada = Console.ReadLine();
                 }
 
             } while (!int.TryParse(entrada, out B));
             return B;
+        }
+
+        public static void CloseProgram(string x) //Encerrar programa a qualquer momento
+        {
+            if (x.ToUpper() == "X") { Environment.Exit(0); }
         }
     }
 }

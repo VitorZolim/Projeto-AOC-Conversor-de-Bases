@@ -5,6 +5,10 @@
         HashSet<char> NumberValid { get; set; } //Uso de HashSet, mais pratico que Array
         bool Validator(string value) //Verifica se o valor do User, é permitido para conversão
         {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return false;
+            }
             bool verificate = value.All(c => NumberValid.Contains(c));
             return verificate;
         }

@@ -23,13 +23,13 @@ public class Program
 
             Console.Write("Base do Número: ");
             string option = Console.ReadLine();
-            if (option.ToUpper() == "X") { break; } // Fim Programa
 
             n = BaseSelect.SelectionInt(option); //Base do Número
             MainBase = BaseSelect.TypeNumeric(n);
 
             Console.Write("Número: ");
-            Value = Console.ReadLine(); //Número para conversão
+            Value = Console.ReadLine().ToUpper(); //Número para conversão
+            BaseSelect.CloseProgram(Value);
 
             Console.Write("Base de Conversão: ");
             option = Console.ReadLine(); //Base para conversão
